@@ -23,7 +23,7 @@ To map the reserves across the regions, data was compiled using a multi-tiered v
 
 ## Interactive Spatial Boundary Map
 Below is the completely interactive, zoomable web map displaying the calculated reserve polygon and its underlying attribute data table:
-<iframe src="https://herao-research.github.io/Herao-Zhang/gba-maps/index.html" 
+<iframe src="https://herao-research.github.io/Herao-Zhang/gba-mpas/index.html" 
         width="100%" 
         height="600px" 
         style="border: 2px solid #ddd; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0,0,0,0.08);"
