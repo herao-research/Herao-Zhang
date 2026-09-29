@@ -754,3 +754,69 @@ function fnc__specialcol_(values, context) {
 function fnc_project_color(values, context) {
     return false;
 };
+
+
+
+function exp_GBA_MPAs_1rule0_eval_expression(context) {
+    // Level = 'Country'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Level']  == 'Country');
+    } else {
+        return (feature['Level']  == 'Country');
+    }
+}
+
+
+function exp_GBA_MPAs_1rule1_eval_expression(context) {
+    // Level = 'Municipal'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Level']  == 'Municipal');
+    } else {
+        return (feature['Level']  == 'Municipal');
+    }
+}
+
+
+function exp_GBA_MPAs_1rule2_eval_expression(context) {
+    // Level = 'National'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Level']  == 'National');
+    } else {
+        return (feature['Level']  == 'National');
+    }
+}
+
+
+function exp_GBA_MPAs_1rule3_eval_expression(context) {
+    // Level = 'Provincial'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Level']  == 'Provincial');
+    } else {
+        return (feature['Level']  == 'Provincial');
+    }
+}
+
+
+function exp_GBA_MPAs_1rule4_eval_expression(context) {
+    // Level = 'HK'
+
+    var feature = context.feature;
+    
+    if (feature.properties) {
+        return (feature.properties['Level']  == 'HK');
+    } else {
+        return (feature['Level']  == 'HK');
+    }
+}
