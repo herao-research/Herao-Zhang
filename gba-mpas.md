@@ -1,7 +1,6 @@
 # Greater Bay Area Marine Protected Areas (GBA MPAs)
 
 ## Project Overview
-This project focuses on the spatial definition, geometric reconstruction, and ecological boundary modeling of marine protected areas, marine reserves and marine parks within the Greater Bay Area. Because a unified spatial dataset for the Greater Bay Area (GBA) spanning multiple jurisdictions does not exist publicly, this database was constructed by synthesizing multi-source regional registries, legal decrees, and satellite georeferencing:
 A unified, comprehensive spatial dataset for Marine Protected Areas (MPAs) spanning multiple jurisdictions in the **Greater Bay Area (GBA)** does not currently exist publicly. 
 
 My direct involvement in this spatial mapping initiative emerged from collaborative work alongside **Dr. Andy Cornish** focusing on **Hong Kong Marine Protected Areas (HKMPAs)**. Through analyzing the localized conservation boundaries of Hong Kong's marine parks and the intend to see the connectivity of MPAs within the Greater Bay Area, I developed a strong personal research interest in regional marine ecology management. This inspired me to independently expand the research scope and leverage **QGIS** to synthesize, model, and digitize a unified cross-border spatial database for the broader GBA maritime protection zones.
