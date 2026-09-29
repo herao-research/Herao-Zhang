@@ -1,0 +1,12 @@
+# Welcome to Herao Research
+
+I am interested in marine conservation, climate adaptations, and fisheries science. This website showcases my academic background, ongoing research projects, and spatial analysis work.
+
+## Research Interests
+* Marine Protected Areas (MPAs)
+* Spatial Boundary Modeling in QGIS
+* Coral Ecosystems, fisheries, and climate adaptations
+
+## Quick Links
+* [View My Research Projects](./projects.md)
+
