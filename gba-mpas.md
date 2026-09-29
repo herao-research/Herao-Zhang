@@ -3,7 +3,7 @@
 ## Project Overview
 A unified, comprehensive spatial dataset for Marine Protected Areas (MPAs) spanning multiple jurisdictions in the **Greater Bay Area (GBA)** does not currently exist publicly. 
 
-My direct involvement in this spatial mapping initiative emerged from collaborative work alongside **Dr. Andy Cornish** focusing on **Hong Kong Marine Protected Areas (HKMPAs)**. Through analyzing the localized conservation boundaries of Hong Kong's marine parks and the intend to see the connectivity of MPAs within the Greater Bay Area, I developed a strong personal research interest in regional marine ecology management. This inspired me to independently expand the research scope and leverage **QGIS** to synthesize, model, and digitize a unified cross-border spatial database for the broader GBA maritime protection zones.
+My direct involvement in this spatial mapping initiative emerged from collaborative work alongside **Dr. Andy Cornish** focusing on **Hong Kong Marine Protected Areas (HKMPAs)**. Through analyzing the localized conservation boundaries of Hong Kong's marine parks and the intend to see the connectivity of MPAs within the Greater Bay Area, I developed a strong interest in regional marine ecology management. This inspired me to independently expand the research scope and leverage **QGIS** to synthesize, model, and digitize a unified cross-border spatial database for the broader GBA maritime protection zones.
 
 ## Spatial Methodology & QGIS Analysis
 * **Coordinate Reference System:** Projected using **CGCS2000 / 3-degree Gauss-Kruger CM 114E (EPSG:4574)** to guarantee zero distance distortion.
@@ -15,7 +15,7 @@ My direct involvement in this spatial mapping initiative emerged from collaborat
 ### 2. Mainland Marine Protected Areas (Non-HK MPAs)
 To map the reserves across the regions, data was compiled using a multi-tiered validation approach:
 * **Global Databases:** Baseline geometric boundaries for established national reserves were pulled directly from the **World Database on Protected Areas (WDPA)** via protectedplanet.net and filtered down to the Guangdong maritime administrative zone.
-* **Government Decrees & Legal Texts:** Core attributes and boundary rules—such as the 2018 Jiangmen Municipal Marine Ecosystem Protection Plan establishing the **Wuzhu Island Marine Special Protected Area**—were sourced directly from local government gazettes to define exact coordinate and coverage.
+* **Government Decrees & Legal Texts:** Core attributes and boundary rules—such as the 2018 Jiangmen Municipal Marine Ecosystem Protection Plan establishing the **Wuzhu Island Marine Special Protected Area**—were sourced directly from local government documents to define exact coordinate and coverage.
 * **Key Academic Benchmark & Auxiliary Datasets:** Primary coordinate anchors and spatial coverage figures were cross-referenced against the supplementary datasets from the peer-reviewed paper:
   * *Reference:* **"Bohorquez, J. J., Dudgeon, C. L., Gownaris, N. J., & Pikitch, E. K. (2021). China’s little-known efforts to protect its marine ecosystems safeguard some habitats but omit others. Science Advances, 7(46), Article eabj1569. https://doi.org/10.1126/sciadv.abj1569"** 
   * *Application:* The auxiliary dataset published alongside this study was utilized as a primary spatial reference to verify, cross-check, and ground-truth the geographical coordinates and calculated coverage extents of localized marine reserves.
