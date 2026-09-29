@@ -1,4 +1,4 @@
-# My Research & GIS Projects
+# My Research & Projects
 
 Welcome to my research portfolio. Below is a collection of my ongoing and past academic work and projects.
 
