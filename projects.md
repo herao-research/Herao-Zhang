@@ -3,7 +3,7 @@
 Welcome to my research portfolio. Below is a collection of my ongoing and past academic work and projects.
 
 ### Core Research & Data
-* **[Greater Bay Area Marine Protected Areas (GBA MPAs)](./gba-mpas.html)** (Recent Work)  
+* **[Greater Bay Area Marine Protected Areas (GBA MPAs)](./gba-mpas.md)** (Recent Work)  
   *A comprehensive spatial database tracking municipal, provincial and national MPAs and marine reserves for the Greater Bay Area.*
 
 * **[Master thesis on marine plastic pollutants](./thesis.md)** (past work) 
