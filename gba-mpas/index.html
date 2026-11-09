@@ -37,12 +37,11 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/GBA_MPAs_1.js"></script>
-        <script src="data/HK_MPAsHK_mpas_2.js"></script>
-        <script src="data/Municipal_MPAsMunicipal_mpas_3.js"></script>
-        <script src="data/Provincial_MPAsProvincial_mpas_4.js"></script>
-        <script src="data/National_MPAsNational_mpas_5.js"></script>
-        <script src="data/County_MPAsCountry_mpas_6.js"></script>
+        <script src="data/HK_MPAsHK_mpas_1.js"></script>
+        <script src="data/Municipal_MPAsMunicipal_mpas_2.js"></script>
+        <script src="data/Provincial_MPAsProvincial_mpas_3.js"></script>
+        <script src="data/National_MPAsNational_mpas_4.js"></script>
+        <script src="data/County_MPAsCounty_mpas_5.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:18, minZoom:3
@@ -154,14 +153,8 @@
         });
         layer_RRZEOpenStreetMapStandardHD_0;
         map.addLayer(layer_RRZEOpenStreetMapStandardHD_0);
-        function pop_GBA_MPAs_1(feature, layer) {
+        function pop_HK_MPAsHK_mpas_1(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MPA_ID'] !== null ? autolinker.link(String(feature.properties['MPA_ID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">Name</th>\
                         <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -174,12 +167,6 @@
                         <th scope="row">Area=Km2</th>\
                         <td class="visible-with-data" id="Area=Km2">' + (feature.properties['Area=Km2'] !== null ? autolinker.link(String(feature.properties['Area=Km2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -188,136 +175,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_GBA_MPAs_1_0(feature) {
-            switch(String(feature.properties['Level'])) {
-                case 'County':
-                    return {
-                pane: 'pane_GBA_MPAs_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(215,25,28,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'HK':
-                    return {
-                pane: 'pane_GBA_MPAs_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(31,120,180,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Municipal':
-                    return {
-                pane: 'pane_GBA_MPAs_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(254,223,153,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'National':
-                    return {
-                pane: 'pane_GBA_MPAs_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(236,178,221,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'Provincial':
-                    return {
-                pane: 'pane_GBA_MPAs_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(235,155,17,1.0)',
-                interactive: true,
-            }
-                    break;
-            }
-        }
-        map.createPane('pane_GBA_MPAs_1');
-        map.getPane('pane_GBA_MPAs_1').style.zIndex = 401;
-        map.getPane('pane_GBA_MPAs_1').style['mix-blend-mode'] = 'normal';
-        var layer_GBA_MPAs_1 = new L.geoJson(json_GBA_MPAs_1, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_GBA_MPAs_1',
-            layerName: 'layer_GBA_MPAs_1',
-            pane: 'pane_GBA_MPAs_1',
-            onEachFeature: pop_GBA_MPAs_1,
-            style: style_GBA_MPAs_1_0,
-        });
-        bounds_group.addLayer(layer_GBA_MPAs_1);
-        map.addLayer(layer_GBA_MPAs_1);
-        function pop_HK_MPAsHK_mpas_2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MPA_ID'] !== null ? autolinker.link(String(feature.properties['MPA_ID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Name</th>\
-                        <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Level</th>\
-                        <td>' + (feature.properties['Level'] !== null ? autolinker.link(String(feature.properties['Level']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">Area=Km2</th>\
-                        <td class="visible-with-data" id="Area=Km2">' + (feature.properties['Area=Km2'] !== null ? autolinker.link(String(feature.properties['Area=Km2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_HK_MPAsHK_mpas_2_0() {
+        function style_HK_MPAsHK_mpas_1_0() {
             return {
-                pane: 'pane_HK_MPAsHK_mpas_2',
+                pane: 'pane_HK_MPAsHK_mpas_1',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -330,28 +190,22 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_HK_MPAsHK_mpas_2');
-        map.getPane('pane_HK_MPAsHK_mpas_2').style.zIndex = 402;
-        map.getPane('pane_HK_MPAsHK_mpas_2').style['mix-blend-mode'] = 'normal';
-        var layer_HK_MPAsHK_mpas_2 = new L.geoJson(json_HK_MPAsHK_mpas_2, {
+        map.createPane('pane_HK_MPAsHK_mpas_1');
+        map.getPane('pane_HK_MPAsHK_mpas_1').style.zIndex = 401;
+        map.getPane('pane_HK_MPAsHK_mpas_1').style['mix-blend-mode'] = 'normal';
+        var layer_HK_MPAsHK_mpas_1 = new L.geoJson(json_HK_MPAsHK_mpas_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_HK_MPAsHK_mpas_2',
-            layerName: 'layer_HK_MPAsHK_mpas_2',
-            pane: 'pane_HK_MPAsHK_mpas_2',
-            onEachFeature: pop_HK_MPAsHK_mpas_2,
-            style: style_HK_MPAsHK_mpas_2_0,
+            dataVar: 'json_HK_MPAsHK_mpas_1',
+            layerName: 'layer_HK_MPAsHK_mpas_1',
+            pane: 'pane_HK_MPAsHK_mpas_1',
+            onEachFeature: pop_HK_MPAsHK_mpas_1,
+            style: style_HK_MPAsHK_mpas_1_0,
         });
-        bounds_group.addLayer(layer_HK_MPAsHK_mpas_2);
-        map.addLayer(layer_HK_MPAsHK_mpas_2);
-        function pop_Municipal_MPAsMunicipal_mpas_3(feature, layer) {
+        bounds_group.addLayer(layer_HK_MPAsHK_mpas_1);
+        map.addLayer(layer_HK_MPAsHK_mpas_1);
+        function pop_Municipal_MPAsMunicipal_mpas_2(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MPA_ID'] !== null ? autolinker.link(String(feature.properties['MPA_ID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">Name</th>\
                         <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -364,12 +218,6 @@
                         <th scope="row">Area=Km2</th>\
                         <td class="visible-with-data" id="Area=Km2">' + (feature.properties['Area=Km2'] !== null ? autolinker.link(String(feature.properties['Area=Km2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -378,9 +226,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Municipal_MPAsMunicipal_mpas_3_0() {
+        function style_Municipal_MPAsMunicipal_mpas_2_0() {
             return {
-                pane: 'pane_Municipal_MPAsMunicipal_mpas_3',
+                pane: 'pane_Municipal_MPAsMunicipal_mpas_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -393,28 +241,22 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Municipal_MPAsMunicipal_mpas_3');
-        map.getPane('pane_Municipal_MPAsMunicipal_mpas_3').style.zIndex = 403;
-        map.getPane('pane_Municipal_MPAsMunicipal_mpas_3').style['mix-blend-mode'] = 'normal';
-        var layer_Municipal_MPAsMunicipal_mpas_3 = new L.geoJson(json_Municipal_MPAsMunicipal_mpas_3, {
+        map.createPane('pane_Municipal_MPAsMunicipal_mpas_2');
+        map.getPane('pane_Municipal_MPAsMunicipal_mpas_2').style.zIndex = 402;
+        map.getPane('pane_Municipal_MPAsMunicipal_mpas_2').style['mix-blend-mode'] = 'normal';
+        var layer_Municipal_MPAsMunicipal_mpas_2 = new L.geoJson(json_Municipal_MPAsMunicipal_mpas_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Municipal_MPAsMunicipal_mpas_3',
-            layerName: 'layer_Municipal_MPAsMunicipal_mpas_3',
-            pane: 'pane_Municipal_MPAsMunicipal_mpas_3',
-            onEachFeature: pop_Municipal_MPAsMunicipal_mpas_3,
-            style: style_Municipal_MPAsMunicipal_mpas_3_0,
+            dataVar: 'json_Municipal_MPAsMunicipal_mpas_2',
+            layerName: 'layer_Municipal_MPAsMunicipal_mpas_2',
+            pane: 'pane_Municipal_MPAsMunicipal_mpas_2',
+            onEachFeature: pop_Municipal_MPAsMunicipal_mpas_2,
+            style: style_Municipal_MPAsMunicipal_mpas_2_0,
         });
-        bounds_group.addLayer(layer_Municipal_MPAsMunicipal_mpas_3);
-        map.addLayer(layer_Municipal_MPAsMunicipal_mpas_3);
-        function pop_Provincial_MPAsProvincial_mpas_4(feature, layer) {
+        bounds_group.addLayer(layer_Municipal_MPAsMunicipal_mpas_2);
+        map.addLayer(layer_Municipal_MPAsMunicipal_mpas_2);
+        function pop_Provincial_MPAsProvincial_mpas_3(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MPA_ID'] !== null ? autolinker.link(String(feature.properties['MPA_ID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">Name</th>\
                         <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -427,12 +269,6 @@
                         <th scope="row">Area=Km2</th>\
                         <td class="visible-with-data" id="Area=Km2">' + (feature.properties['Area=Km2'] !== null ? autolinker.link(String(feature.properties['Area=Km2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -441,9 +277,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_Provincial_MPAsProvincial_mpas_4_0() {
+        function style_Provincial_MPAsProvincial_mpas_3_0() {
             return {
-                pane: 'pane_Provincial_MPAsProvincial_mpas_4',
+                pane: 'pane_Provincial_MPAsProvincial_mpas_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -456,28 +292,22 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_Provincial_MPAsProvincial_mpas_4');
-        map.getPane('pane_Provincial_MPAsProvincial_mpas_4').style.zIndex = 404;
-        map.getPane('pane_Provincial_MPAsProvincial_mpas_4').style['mix-blend-mode'] = 'normal';
-        var layer_Provincial_MPAsProvincial_mpas_4 = new L.geoJson(json_Provincial_MPAsProvincial_mpas_4, {
+        map.createPane('pane_Provincial_MPAsProvincial_mpas_3');
+        map.getPane('pane_Provincial_MPAsProvincial_mpas_3').style.zIndex = 403;
+        map.getPane('pane_Provincial_MPAsProvincial_mpas_3').style['mix-blend-mode'] = 'normal';
+        var layer_Provincial_MPAsProvincial_mpas_3 = new L.geoJson(json_Provincial_MPAsProvincial_mpas_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_Provincial_MPAsProvincial_mpas_4',
-            layerName: 'layer_Provincial_MPAsProvincial_mpas_4',
-            pane: 'pane_Provincial_MPAsProvincial_mpas_4',
-            onEachFeature: pop_Provincial_MPAsProvincial_mpas_4,
-            style: style_Provincial_MPAsProvincial_mpas_4_0,
+            dataVar: 'json_Provincial_MPAsProvincial_mpas_3',
+            layerName: 'layer_Provincial_MPAsProvincial_mpas_3',
+            pane: 'pane_Provincial_MPAsProvincial_mpas_3',
+            onEachFeature: pop_Provincial_MPAsProvincial_mpas_3,
+            style: style_Provincial_MPAsProvincial_mpas_3_0,
         });
-        bounds_group.addLayer(layer_Provincial_MPAsProvincial_mpas_4);
-        map.addLayer(layer_Provincial_MPAsProvincial_mpas_4);
-        function pop_National_MPAsNational_mpas_5(feature, layer) {
+        bounds_group.addLayer(layer_Provincial_MPAsProvincial_mpas_3);
+        map.addLayer(layer_Provincial_MPAsProvincial_mpas_3);
+        function pop_National_MPAsNational_mpas_4(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MPA_ID'] !== null ? autolinker.link(String(feature.properties['MPA_ID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">Name</th>\
                         <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -490,12 +320,6 @@
                         <th scope="row">Area=Km2</th>\
                         <td class="visible-with-data" id="Area=Km2">' + (feature.properties['Area=Km2'] !== null ? autolinker.link(String(feature.properties['Area=Km2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -504,9 +328,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_National_MPAsNational_mpas_5_0() {
+        function style_National_MPAsNational_mpas_4_0() {
             return {
-                pane: 'pane_National_MPAsNational_mpas_5',
+                pane: 'pane_National_MPAsNational_mpas_4',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -519,28 +343,22 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_National_MPAsNational_mpas_5');
-        map.getPane('pane_National_MPAsNational_mpas_5').style.zIndex = 405;
-        map.getPane('pane_National_MPAsNational_mpas_5').style['mix-blend-mode'] = 'normal';
-        var layer_National_MPAsNational_mpas_5 = new L.geoJson(json_National_MPAsNational_mpas_5, {
+        map.createPane('pane_National_MPAsNational_mpas_4');
+        map.getPane('pane_National_MPAsNational_mpas_4').style.zIndex = 404;
+        map.getPane('pane_National_MPAsNational_mpas_4').style['mix-blend-mode'] = 'normal';
+        var layer_National_MPAsNational_mpas_4 = new L.geoJson(json_National_MPAsNational_mpas_4, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_National_MPAsNational_mpas_5',
-            layerName: 'layer_National_MPAsNational_mpas_5',
-            pane: 'pane_National_MPAsNational_mpas_5',
-            onEachFeature: pop_National_MPAsNational_mpas_5,
-            style: style_National_MPAsNational_mpas_5_0,
+            dataVar: 'json_National_MPAsNational_mpas_4',
+            layerName: 'layer_National_MPAsNational_mpas_4',
+            pane: 'pane_National_MPAsNational_mpas_4',
+            onEachFeature: pop_National_MPAsNational_mpas_4,
+            style: style_National_MPAsNational_mpas_4_0,
         });
-        bounds_group.addLayer(layer_National_MPAsNational_mpas_5);
-        map.addLayer(layer_National_MPAsNational_mpas_5);
-        function pop_County_MPAsCountry_mpas_6(feature, layer) {
+        bounds_group.addLayer(layer_National_MPAsNational_mpas_4);
+        map.addLayer(layer_National_MPAsNational_mpas_4);
+        function pop_County_MPAsCounty_mpas_5(feature, layer) {
             var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(String(feature.properties['fid']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['MPA_ID'] !== null ? autolinker.link(String(feature.properties['MPA_ID']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                     <tr>\
                         <th scope="row">Name</th>\
                         <td>' + (feature.properties['Name'] !== null ? autolinker.link(String(feature.properties['Name']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -553,12 +371,6 @@
                         <th scope="row">Area=Km2</th>\
                         <td class="visible-with-data" id="Area=Km2">' + (feature.properties['Area=Km2'] !== null ? autolinker.link(String(feature.properties['Area=Km2']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['layer'] !== null ? autolinker.link(String(feature.properties['layer']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['path'] !== null ? autolinker.link(String(feature.properties['path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -567,9 +379,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_County_MPAsCountry_mpas_6_0() {
+        function style_County_MPAsCounty_mpas_5_0() {
             return {
-                pane: 'pane_County_MPAsCountry_mpas_6',
+                pane: 'pane_County_MPAsCounty_mpas_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,1.0)',
                 dashArray: '',
@@ -582,27 +394,26 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_County_MPAsCountry_mpas_6');
-        map.getPane('pane_County_MPAsCountry_mpas_6').style.zIndex = 406;
-        map.getPane('pane_County_MPAsCountry_mpas_6').style['mix-blend-mode'] = 'normal';
-        var layer_County_MPAsCountry_mpas_6 = new L.geoJson(json_County_MPAsCountry_mpas_6, {
+        map.createPane('pane_County_MPAsCounty_mpas_5');
+        map.getPane('pane_County_MPAsCounty_mpas_5').style.zIndex = 405;
+        map.getPane('pane_County_MPAsCounty_mpas_5').style['mix-blend-mode'] = 'normal';
+        var layer_County_MPAsCounty_mpas_5 = new L.geoJson(json_County_MPAsCounty_mpas_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_County_MPAsCountry_mpas_6',
-            layerName: 'layer_County_MPAsCountry_mpas_6',
-            pane: 'pane_County_MPAsCountry_mpas_6',
-            onEachFeature: pop_County_MPAsCountry_mpas_6,
-            style: style_County_MPAsCountry_mpas_6_0,
+            dataVar: 'json_County_MPAsCounty_mpas_5',
+            layerName: 'layer_County_MPAsCounty_mpas_5',
+            pane: 'pane_County_MPAsCounty_mpas_5',
+            onEachFeature: pop_County_MPAsCounty_mpas_5,
+            style: style_County_MPAsCounty_mpas_5_0,
         });
-        bounds_group.addLayer(layer_County_MPAsCountry_mpas_6);
-        map.addLayer(layer_County_MPAsCountry_mpas_6);
+        bounds_group.addLayer(layer_County_MPAsCounty_mpas_5);
+        map.addLayer(layer_County_MPAsCounty_mpas_5);
         var overlaysTree = [
-            {label: '<img src="legend/County_MPAsCountry_mpas_6.png" /> County_MPAs — Country_mpas', layer: layer_County_MPAsCountry_mpas_6},
-            {label: '<img src="legend/National_MPAsNational_mpas_5.png" /> National_MPAs — National_mpas', layer: layer_National_MPAsNational_mpas_5},
-            {label: '<img src="legend/Provincial_MPAsProvincial_mpas_4.png" /> Provincial_MPAs — Provincial_mpas', layer: layer_Provincial_MPAsProvincial_mpas_4},
-            {label: '<img src="legend/Municipal_MPAsMunicipal_mpas_3.png" /> Municipal_MPAs — Municipal_mpas', layer: layer_Municipal_MPAsMunicipal_mpas_3},
-            {label: '<img src="legend/HK_MPAsHK_mpas_2.png" /> HK_MPAs — HK_mpas', layer: layer_HK_MPAsHK_mpas_2},
-            {label: 'GBA_MPAs<br /><table><tr><td style="text-align: center;"><img src="legend/GBA_MPAs_1_County0.png" /></td><td>County</td></tr><tr><td style="text-align: center;"><img src="legend/GBA_MPAs_1_HK1.png" /></td><td>HK</td></tr><tr><td style="text-align: center;"><img src="legend/GBA_MPAs_1_Municipal2.png" /></td><td>Municipal</td></tr><tr><td style="text-align: center;"><img src="legend/GBA_MPAs_1_National3.png" /></td><td>National</td></tr><tr><td style="text-align: center;"><img src="legend/GBA_MPAs_1_Provincial4.png" /></td><td>Provincial</td></tr></table>', layer: layer_GBA_MPAs_1},
+            {label: '<img src="legend/County_MPAsCounty_mpas_5.png" /> County_MPAs — County_mpas', layer: layer_County_MPAsCounty_mpas_5},
+            {label: '<img src="legend/National_MPAsNational_mpas_4.png" /> National_MPAs — National_mpas', layer: layer_National_MPAsNational_mpas_4},
+            {label: '<img src="legend/Provincial_MPAsProvincial_mpas_3.png" /> Provincial_MPAs — Provincial_mpas', layer: layer_Provincial_MPAsProvincial_mpas_3},
+            {label: '<img src="legend/Municipal_MPAsMunicipal_mpas_2.png" /> Municipal_MPAs — Municipal_mpas', layer: layer_Municipal_MPAsMunicipal_mpas_2},
+            {label: '<img src="legend/HK_MPAsHK_mpas_1.png" /> HK_MPAs — HK_mpas', layer: layer_HK_MPAsHK_mpas_1},
             {label: "RRZE OpenStreetMap Standard HD", layer: layer_RRZEOpenStreetMapStandardHD_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
